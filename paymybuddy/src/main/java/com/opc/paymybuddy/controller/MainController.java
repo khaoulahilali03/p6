@@ -8,4 +8,7 @@ public class MainController {
 
     @GetMapping("/login")
     public String login(){ return "login";}
+
+    @GetMapping("/home")
+    public String menu(){return "home";}
 }
