@@ -11,4 +11,7 @@ public class MainController {
 
     @GetMapping("/home")
     public String menu(){return "home";}
+
+    @GetMapping("/logoff")
+    public String logoffPage(){ return "redirect:/login?logoff";}
 }
