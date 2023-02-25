@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,4 +28,23 @@ public class Friend {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "iban")
+    private String iban;
+
+    @ManyToOne(
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "userId")
+    private User user;
+
+    @OneToMany(
+            mappedBy = "friend",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Account> accountList = new ArrayList<>();
 }

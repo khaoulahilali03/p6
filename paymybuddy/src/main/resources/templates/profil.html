@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"     xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>profil</title>
+</head>
+<body>
+<div th:replace="header :: header"></div>
+<div th:insert="menu" id="menu"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h2 class="offset-md-6">Profil</h2>
+    </div>
+  </div>
+  <form th:action="@{/profil}" th:object="${user}" method="post">
+    <input type="hidden" id="id"  name="id">
+    <div class="card-body">
+      <div class=" col-md-6 pt-3  offset-md-3 form-group">
+        <label  class="control-label " for="firstName">First Name</label>
+        <input
+                id="firstName"
+                type="text"
+                name="firstName"
+                class="form-control"
+        />
+      </div>
+
+      <div class="col-md-6 pt-3  offset-md-3 form-group">
+        <label class="control-label " for="lastName">Last Name</label>
+        <input
+                id="lastName"
+                type="text"
+                name="lastName"
+                class="form-control"
+        />
+      </div>
+
+      <div class=" col-md-6 pt-3  offset-md-3 form-group">
+        <label class="control-label " for="address">Address</label>
+        <input
+                id="address"
+                type="text"
+                name="address"
+                class="form-control"
+        />
+      </div>
+      <div class="col-md-6 pt-3  offset-md-3 form-group">
+        <label class="control-label " for="email">Email</label>
+        <input
+                id="email"
+                type="text"
+                name="email"
+                class="form-control"
+        />
+      </div>
+      <div class="col-md-6 pt-3  offset-md-3 form-group">
+        <label class="control-label " for="password">Password</label>
+        <input
+                id="password"
+                type="text"
+                name="password"
+                class="form-control"
+        />
+      </div>
+
+      <div class="col-md-7 pt-3">
+        <button type="submit" class="btn btn-success offset-md-10">Submit</button>
+      </div>
+
+
+    </div>
+
+  </form>
+
+  </div>
+
+</div>
+
+</body>
+</html>

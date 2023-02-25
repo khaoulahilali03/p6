@@ -38,4 +38,13 @@ public class Transaction {
 
     @Column(name = "description")
     private String description;
+
+    @ManyToOne(
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            }
+    )
+    @JoinColumn(name = "accountId")
+    private Account account;
 }

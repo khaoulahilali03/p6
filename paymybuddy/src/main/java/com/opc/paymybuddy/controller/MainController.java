@@ -12,6 +12,12 @@ public class MainController {
     @GetMapping("/home")
     public String menu(){return "home";}
 
+    @GetMapping("/contact")
+    public String contact() {return "contact";}
+
     @GetMapping("/logoff")
     public String logoffPage(){ return "redirect:/login?logoff";}
+
+    @GetMapping("/profil")
+    public String profil(){return "profil";}
 }
